@@ -1219,13 +1219,17 @@ AnovaRepeatedMeasuresInternal <- function(jaspResults, dataset = NULL, options) 
 
     formula <- as.formula(paste("~", termBase64))
 
-    if(options$marginalMeanCiCorrection == "bonferroni") {
-      adjMethod <- "bonferroni"
-    } else if(options$marginalMeanCiCorrection == "sidak") {
-      adjMethod <- "sidak"
-    } else {
-      adjMethod <- "none"
-    }
+if(options$marginalMeanCiCorrection == "bonferroni") {
+adjMethod <- "bonferroni"
+} else if(options$marginalMeanCiCorrection == "sidak") {
+adjMethod <- "sidak"
+}  else if(options$marginalMeanCiCorrwction == "fdr") {
+adjMethod <- "fdr"
+} else if(options$marginalMeanCiCorrwction == "BY") {
+adjMethod <- "BY" 
+}  else {
+adjMethod <- "none"
+}
 
     marginalResult <- summary(emmeans::lsmeans(fullModel, formula), adjust = adjMethod, infer = c(TRUE,TRUE))
 
