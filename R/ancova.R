@@ -921,7 +921,7 @@ AncovaInternal <- function(jaspResults, dataset = NULL, options) {
   postHocStandardContainer <- createJaspContainer(title = myTitle)
   postHocStandardContainer$dependOn(c("postHocTerms", "postHocTypeStandardEffectSize", "postHocTypeStandard",
                                       "postHocCorrectionBonferroni", "postHocCorrectionHolm", "postHocCorrectionScheffe",
-                                      "postHocCorrectionTukey", "postHocCorrectionSidak", "postHocSignificanceFlag",
+                                      "postHocCorrectionTukey", "postHocCorrectionSidak","postHocCorrectionfdr","postHocCorrectionBY","postHocSignificanceFlag",
                                       "postHocTypeStandardBootstrap", "postHocTypeStandardBootstrapSamples", "postHocConditionalTable",
                                       "postHocCi", "postHocCiLevel", "postHocLetterTable", "postHocLetterAlpha"))
 

@@ -72,7 +72,10 @@ Section
 		CheckBox { name: "postHocCorrectionScheffe";		label: qsTr("Scheffé"); info: qsTr("Adjusting significance levels in a linear regression, to account for multiple comparisons. This method is considered to be quite conservative.")				}
 		CheckBox { name: "postHocCorrectionBonferroni";		label: qsTr("Bonferroni"); info: qsTr("This correction is considered conservative. The risk of Type I error is reduced, however the statistical power decreases as well.")			}
 		CheckBox { name: "postHocCorrectionHolm";			label: qsTr("Holm")	; info: qsTr("This method is also called sequential Bonferroni, and considered less conservative than the Bonferroni method.")				}
-		CheckBox { name: "postHocCorrectionSidak";			label: qsTr("Šidák"); info: qsTr("This method is considered less conservative than Bonferroni but still maintains statistical power. It is usually used if there is not a big amount of tests to be performed.")				}
+		CheckBox { name: "postHocCorrectionSidak";			label: qsTr("Šidák"); info: qsTr("This method is considered less conservative than Bonferroni but still maintains statistical power. It is usually used if there is not a big amount of tests to be performed.")
+		CheckBox { name: "postHocCorrectionFDR";			label: qsTr("FDR"); info: qsTr("")
+		CheckBox { name: "postHocCorrectionBenjamini-Yekutieli";			label: qsTr("")
+		}
 	}
 
 	Classical.PostHocDisplay{}
