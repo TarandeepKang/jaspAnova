@@ -996,8 +996,23 @@ AnovaRepeatedMeasuresInternal <- function(jaspResults, dataset = NULL, options) 
                                                    by = byVariable[termIndex]))[["p.value"]]
 
       resultPostHoc[["bonferroni"]] <-  summary(pairs(referenceGrid[[thisVarName]], adjust="bonferroni",
-                                                by = byVariable[termIndex]))[["p.value"]]
+      
+                                                      resultPostHoc[["bonferroni"]] <-  summary(pairs(referenceGrid[[thisVarName]], adjust="bonferroni",
+                                                                                                      by = byVariable[termIndex]))[["p.value"]]
+                                                      by = byVariable[termIndex]))[["p.value"]]
 
+      resultPostHoc[["fdr"]] <-  summary(pairs(referenceGrid[[thisVarName]], adjust="fdr",
+                                                      
+                                                      resultPostHoc[["fdr"]] <-  summary(pairs(referenceGrid[[thisVarName]], adjust="fdr",
+                                                                                                      by = byVariable[termIndex]))[["p.value"]]
+                                                      by = byVariable[termIndex]))[["p.value"]]
+      
+      resultPostHoc[["BY"]] <-  summary(pairs(referenceGrid[[thisVarName]], adjust="BY",
+                                                      
+                                                      resultPostHoc[["BY"]] <-  summary(pairs(referenceGrid[[thisVarName]], adjust="BY",
+                                                                                                      by = byVariable[termIndex]))[["p.value"]]
+                                                      by = byVariable[termIndex]))[["p.value"]]
+      
       resultPostHoc[["cohenD"]] <- effectSizeResult[["effect.size"]]
       resultPostHoc[["cohenD_LowerCI"]] <- effectSizeResult[["lower.CL"]]
       resultPostHoc[["cohenD_UpperCI"]] <- effectSizeResult[["upper.CL"]]
